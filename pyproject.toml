@@ -1,0 +1,25 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "asyncgpt"
+version = "1.0.0"
+authors = [
+    { name="Just1z", email="just1z@ya.ru" },
+]
+description = "Asynchronus framework for ChatGPT API"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "aiohttp~=3.8.4",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/Just1z/asyncgpt"
+"Bug Tracker" = "https://github.com/Just1z/asyncgpt/issues"

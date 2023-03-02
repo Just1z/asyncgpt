@@ -1,7 +1,7 @@
 import asyncio
-import pychatgpt
+import asyncgpt
 
-bot = pychatgpt.ChatGPT(apikey="X")
+bot = asyncgpt.ChatGPT(apikey="X")
 completion = asyncio.get_event_loop().run_until_complete(
     bot.complete([{"role": "user", "content": "Hello!"}]))
 print(completion.choices[0]["message"]["content"])
