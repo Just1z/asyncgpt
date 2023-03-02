@@ -1,4 +1,4 @@
-<h1><p align="center">🔥 PyChatGPT 🔥</p></h1>
+<h1><p align="center">🤖 PyChatGPT 🤖</p></h1>
 <p align="center">PyChatGPT is an open-source unofficial asynchronous framework for ChatGPT API written in Python 3.11 using <a href="https://docs.python.org/3/library/asyncio.html" target="_blank">asyncio</a> and <a href="https://github.com/aio-libs/aiohttp" target="_blank">aiohttp</a></p>
 
 ## Installation
