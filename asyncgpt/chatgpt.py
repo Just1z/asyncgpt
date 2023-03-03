@@ -1,6 +1,7 @@
 from typing import Dict, Union
 from aiohttp import ClientSession
 from .types.responses import ChatCompletion
+from .types.exceptions import asyncgptError
 
 class ChatGPT:
     def __init__(self, apikey: str, model: str = "gpt-3.5-turbo") -> None:
@@ -105,4 +106,6 @@ class ChatGPT:
                 json=params
             )
             response = await response.json()
+            if "error" in response:
+                raise asyncgptError(f"error {response['error']['type']}: {response['error']['message']}")
             return ChatCompletion(**response)

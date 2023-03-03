@@ -1,0 +1,2 @@
+class asyncgptError(Exception):
+    pass
