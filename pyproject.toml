@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "asyncgpt"
-version = "1.0.0"
+version = "1.0.1"
 authors = [
     { name="Just1z", email="just1z@ya.ru" },
 ]

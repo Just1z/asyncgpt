@@ -1,2 +1,2 @@
-class asyncgptError(Exception):
+class AsyncGPTError(Exception):
     pass
