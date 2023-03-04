@@ -1,8 +1,13 @@
 import asyncio
 import asyncgpt
 
-bot = asyncgpt.ChatGPT(apikey="X")
-completion = asyncio.get_event_loop().run_until_complete(
-    bot.complete([{"role": "user", "content": "Hello!"}]))
-print(completion.choices[0]["message"]["content"])
-# \n\nHello there! How can I assist you today?
+
+async def main():
+    bot = asyncgpt.ChatGPT(apikey="YOUR API KEY")
+    completion = await bot.complete([{"role": "user", "content": "Hello!"}])
+    print(completion)
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
+    # Hello there! How can I assist you today?

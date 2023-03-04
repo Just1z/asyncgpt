@@ -1,25 +1,31 @@
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
 
-[project]
+[tool.poetry]
 name = "asyncgpt"
-version = "1.0.1"
-authors = [
-    { name="Just1z", email="just1z@ya.ru" },
-]
+version = "1.1.0"
+authors = ["Just1z"]
 description = "Asynchronus framework for ChatGPT API"
+license = "MIT"
 readme = "README.md"
-requires-python = ">=3.10"
 classifiers = [
     "Programming Language :: Python :: 3",
+    "Framework :: AsyncIO",
+    "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
 ]
-dependencies = [
-    "aiohttp~=3.8.4",
-]
+homepage="https://github.com/Just1z/asyncgpt"
+repository="https://github.com/Just1z/asyncgpt"
+keywords = [
+    "chatgpt", "gpt", "async", "api", "openai",
+    "framework", "asyncio", "wrapper"]
 
-[project.urls]
-"Homepage" = "https://github.com/Just1z/asyncgpt"
+[tool.poetry.dependencies]
+python = "^3.10"
+aiohttp = {version="^3.8.4"}
+
+[tool.poetry.urls]
 "Bug Tracker" = "https://github.com/Just1z/asyncgpt/issues"

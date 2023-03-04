@@ -1,7 +1,24 @@
+from typing import Dict
+from dataclasses import dataclass
+
+
+@dataclass
+class ChatCompletionChoice:
+    index: int
+    message: Dict[str, str]
+    finish_reason: str
+
+    def __str__(self) -> str:
+        return self.message["content"]
+
+
+@dataclass
 class ChatCompletion:
-    def __init__(self, **kwargs) -> None:
-        for key, item in kwargs.items():
-            setattr(self, key, item)
+    id: str
+    created: int
+    choices: list[ChatCompletionChoice]
+    usage: Dict[str, int]
+    object: str = "chat.completion"
     
     def __str__(self) -> str:
-        return self.choices[0]["message"]["content"]
+        return str(self.choices[0])

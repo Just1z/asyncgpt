@@ -1,6 +1,6 @@
 from typing import Dict, Union
 from aiohttp import ClientSession
-from .types.responses import ChatCompletion
+from .types.responses import ChatCompletion, ChatCompletionChoice
 from .types.exceptions import AsyncGPTError
 
 APIURL = "https://api.openai.com/v1/chat/completions"
@@ -107,10 +107,14 @@ class ChatGPT:
                 APIURL, json=params,
                 headers={
                     "Content-Type": "application/json",
-                    "Authorization": f"Bearer {self.apikey}"
+                    "Authorization": "Bearer " + self.apikey
                 }
             )
             response = await response.json()
             if "error" in response:
                 raise AsyncGPTError(f"{response['error']['type']}: {response['error']['message']}")
-            return ChatCompletion(**response)
+            return ChatCompletion(
+                id=response["id"], created=response["created"],
+                usage=response["usage"],
+                choices=[ChatCompletionChoice(**choice) for choice in response["choices"]]
+            )
