@@ -19,6 +19,6 @@ class ChatCompletion:
     choices: list[ChatCompletionChoice]
     usage: Dict[str, int]
     object: str = "chat.completion"
-    
+
     def __str__(self) -> str:
         return str(self.choices[0])

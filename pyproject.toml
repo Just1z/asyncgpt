@@ -4,7 +4,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "asyncgpt"
-version = "1.1.0"
+version = "1.2.0"
 authors = ["Just1z"]
 description = "Asynchronus framework for ChatGPT API"
 license = "MIT"
